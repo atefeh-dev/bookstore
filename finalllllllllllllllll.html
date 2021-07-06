@@ -1,0 +1,441 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore</title>
+    <style>
+      body {
+        background-image: linear-gradient(
+          to right top,
+          #bbc7cd,
+          #b4c0c7,
+          #acbac1,
+          #a5b3bb,
+          #9eadb5,
+          #9faeb5,
+          #a0b0b5,
+          #a1b1b5,
+          #acb9bb,
+          #b7c2c2,
+          #c2cac9,
+          #ced2d1
+        );
+        font-family: Helvetica;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #94a5ad;
+        font-weight: 900px;
+      }
+      .name {
+        color: #b95244;
+      }
+      .container {
+        background: white;
+        border: 1px solid #94a5ad;
+        border-radius: 30px;
+        height: 700px;
+        max-width: 1020px;
+        padding: 15px 60px;
+        margin: 40px auto;
+      }
+      .site-header {
+        border-bottom: 1px solid #ccc;
+        padding: 0.5em 1em;
+      }
+
+      .site-header::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .site-identity {
+        float: left;
+      }
+
+      .site-identity img {
+        max-width: 110px;
+        float: left;
+        margin: 0 10px 0 0;
+      }
+      .user-avatar {
+        float: right;
+      }
+
+      .user-avatar img {
+        width: 50px;
+        height: 50px;
+        float: right;
+        margin-top: -52px;
+        border: 2px solid #94a5ad;
+        border-radius: 50%;
+      }
+
+      .site-navigation {
+        display: inline;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .site-navigation ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .site-navigation li {
+        display: inline-block;
+        margin: 1.4em 1em 1em 1em;
+      }
+
+      .one {
+        background: white;
+        width: 400px;
+        height: 600px;
+        float: left;
+      }
+      .two {
+        width: 617px;
+        height: 600px;
+        background: white;
+        overflow: hidden;
+      }
+
+      .one img {
+        width: 400px;
+        height: 501px;
+        border-radius: 0 0 60px;
+      }
+      .one p {
+        text-align: center;
+        color: #4b809b;
+        line-height: 30px;
+        font-weight: 100;
+        font-size: 30px;
+        margin: 0;
+        font-family: Georgia;
+      }
+      .caption {
+        text-align: left;
+        margin-top: 20px;
+      }
+      .caption ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        color: #737a6b;
+      }
+      .caption li {
+        display: inline;
+        font-weight: lighter;
+      }
+      .left {
+        padding-left: 20px;
+        font-size: 12px;
+      }
+      .right {
+        padding-left: 159px;
+        font-size: 12px;
+      }
+      .down-right {
+        padding-left: 55px;
+        font-size: 15px;
+      }
+      .down-left {
+        margin-left: 20px;
+        font-size: 15px;
+      }
+      .content {
+        margin: 0 auto;
+        background: white;
+        padding-left: 30px;
+        height: 700px;
+      }
+      .content {
+        font-weight: 100;
+      }
+      .content h1 {
+        font-family: "Linux Libertine", "Georgia", "Times", serif;
+        font-weight: 100;
+        font-size: 39px;
+        color: #302924;
+      }
+      .content p {
+        color: #747980;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+      .content p a {
+        font-weight: lighter;
+      }
+      .content p a:hover {
+        color: #4b809b;
+        text-decoration: underline;
+      }
+      .content h3 {
+        font-size: 20px;
+        font-weight: lighter;
+        font-family: "Linux Libertine", "Georgia", "Times", serif;
+
+        line-height: 12px;
+        color: #332b26;
+      }
+      .content ul {
+        list-style: none;
+        font-size: 13px;
+        color: #737a6b;
+        width: 3500px;
+      }
+      .content li {
+        line-height: 18px;
+      }
+      .bio {
+        display: inline;
+        background: white;
+        width: 100px;
+        height: 320px;
+      }
+      .world {
+        width: 400px;
+        height: 130px;
+        margin-top: -130px;
+        float: right;
+      }
+      .world img {
+        width: 400px;
+        height: 130px;
+        padding-left: 20px;
+      }
+      .work {
+        width: 900px;
+        height: 300px;
+      }
+      .work h3 {
+        margin-bottom: 16px;
+        font-weight: lighter;
+        font-family: "Linux Libertine", "Georgia", "Times", serif;
+
+        line-height: 12px;
+        color: #332b26;
+      }
+      .coder {
+        font-size: 19px;
+        opacity: 0.7;
+        text-align: center;
+        margin-top: -35px;
+        font-weight: 100;
+        font-family: "Linux Libertine", "Georgia", "Times", serif;
+      }
+
+      figure {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+      }
+      figure img {
+        width: 150px;
+        height: 170px;
+        vertical-align: middle;
+        border: 1px solid #737a6b;
+        border-radius: 18px;
+        margin-right: 15px;
+        padding: 0;
+      }
+      figcaption {
+        font-weight: 400;
+        color: #1b1a19;
+        font-size: 13px;
+        padding-top: 7px;
+        margin-left: 7px;
+      }
+      figcaption p {
+        padding: 0;
+        margin: 3px;
+      }
+      figcaption button {
+        background: transparent;
+        border: 0.2px solid transparent;
+        box-shadow: 2px 2px 4px rgb(37 39 89 / 8%);
+        transition: all 300 ms ease-in-out;
+      }
+      figcaption button:hover {
+        cursor: pointer;
+        background: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <div class="site-identity">
+          <a href="#"
+            ><img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/393/original/book-store-278x300.jpg?1623169238"
+              alt="Site Name"
+          /></a>
+        </div>
+        <nav class="site-navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Challenge</a></li>
+            <li><a href="#">Bookmark</a></li>
+            <li><a href="#">BookStore</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </nav>
+        <div class="user-avatar">
+          <a href="#"
+            ><img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/428/original/twain-oval.jpg?1623234508"
+              alt="avatar"
+          /></a>
+        </div>
+      </header>
+      <div class="one">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/427/original/Men_Painting_Art_Mark_Twain_Moustache_518392_778x1024.jpg?1623232678"
+          alt="Mark Twain"
+        />
+        <div class="caption">
+          <p></p>
+          <ul>
+            <li class="left">BORN</li>
+            <li class="right">DEAD</li>
+          </ul>
+          <p>30 NOW 1835 - 21 APR 1910</p>
+          <p class="live-in"></p>
+          <ul>
+            <li class="down-left">Florida, Missouri, US</li>
+            <li class="down-right">Redding, Cennceticuit, US.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="content">
+          <h1>Mark Twain</h1>
+          <p>
+            <span class="name">Mark Twain</span>, whose real name was Samuel
+            Clemens, was the celebrated author of several novels, including two
+            major classics of American literature: The Adventures of Tom Sawyer
+            and Adventures of Huckleberry Finn. He was also a riverboat pilot,
+            journalist, lecturer, entrepreneur and inventor.
+            <br />
+            <a
+              href="https://www.biography.com/writer/mark-twain"
+              target="_blank"
+              class="learn-more"
+            >
+              Read more on biography
+            </a>
+          </p>
+          <hr />
+          <div class="bio">
+            <h3>🔖 Biography</h3>
+            <ul>
+              <li>Samuel Langhorne Clemers was born on November</li>
+              <li>30. 1835 in Florida,Missouri,the sixth of seven children</li>
+              <li>of jane, a native of kentucky, and john Marshadi</li>
+              <li>Clemens, a native of Virginia</li>
+            </ul>
+          </div>
+          <div class="world">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/445/original/Screenshot_from_2021-06-10_10-16-19.png?1623304152"
+              alt=""
+            />
+          </div>
+          <div class="work">
+            <h3>Books</h3>
+            <figure>
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/463/original/36217134._SY475_.jpg?1623322289"
+                alt="The Prince and the Pauper"
+              />
+              <figcaption>
+                <em>Prince and Pauper</em>
+                <p>
+                  ⭐4.8, 2m reviews
+                  <button>🛒</button>
+                </p>
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/467/original/The-Mysterious-Stranger-SDL873281023-1-b655e.jpg?1623324256"
+                alt="The Mysterious Stranger"
+              />
+              <figcaption>
+                <em>Mysterious Stranger</em>
+
+                <p>
+                  ⭐4.2, 3000 reviews
+                  <button>🛒</button>
+                </p>
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/459/original/images_%281%29.jpeg?1623316655"
+                alt="Huckleberry Finn"
+              />
+              <figcaption>
+                <em>Huckleberry Finn</em>
+
+                <p>
+                  ⭐4.8, 360k reviews
+                  <button>🛒</button>
+                </p>
+              </figcaption>
+            </figure>
+            <figure>
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/460/original/download.jpeg?1623317495"
+                alt="Huckleberry Finn"
+              />
+              <figcaption>
+                <em>Tom Sawyer</em>
+
+                <p>
+                  ⭐4.2, 4m reviews
+                  <button>🛒</button>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="coder">Coded by Atefeh Mohammaddoust</p>
+
+    <script>
+      function getUserInfo() {
+        let h1 = document.querySelector("h1");
+        let firstName = prompt("What is your first name");
+        if (firstName && isNaN(firstName)) {
+          let age = prompt("How old are you?");
+          if (age && !isNaN(age)) {
+            if (age >= 18) {
+              alert(
+                `Hi, ${firstName}! Welcome to BookStore please login first!`
+              );
+            } else alert(`Sorry, ${firstName}! You cannot join BookStore`);
+          } else {
+            alert("you must enter your age");
+          }
+        } else {
+          alert("please enter your name");
+        }
+      }
+      let button = document.querySelectorAll("button");
+      button.forEach((item) => item.addEventListener("click", getUserInfo));
+    </script>
+  </body>
+</html>
